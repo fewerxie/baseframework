@@ -33,4 +33,17 @@ public class GlobalConstant {
         }
     }
 
+    public enum WhetherBoolean {
+        YES(true),
+        NO(false);
+        private Boolean value;
+
+        WhetherBoolean(Boolean value) {
+            this.value = value;
+        }
+        public Boolean getValue() {
+            return value;
+        }
+    }
+
 }
