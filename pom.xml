@@ -24,6 +24,9 @@
         <mybatis.version>3.4.6</mybatis.version>
         <druid.version>1.0.18</druid.version>
         <mapper.version>4.1.4</mapper.version>
+        <guava.version>18.0</guava.version>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <commons-io.version>2.4</commons-io.version>
     </properties>
 
     <dependencies>
@@ -175,6 +178,26 @@
         </dependency>
         <!-- lombok end -->
 
+        <!-- utils start -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>${commons-io.version}</version>
+        </dependency>
+        <!-- utils end -->
+
+        <!-- google java start -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+        <!-- google java end -->
     </dependencies>
 
     <build>
