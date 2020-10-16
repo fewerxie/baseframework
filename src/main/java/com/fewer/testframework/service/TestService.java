@@ -1,24 +1,19 @@
 package com.fewer.testframework.service;
 
+import com.fewer.common.persistence.service.CrudService;
+import com.fewer.testframework.dao.TestDao;
 import com.fewer.testframework.domain.TestPOJO;
-
-import java.util.List;
+import org.springframework.stereotype.Service;
 
 /**
  * @ClassName TestService
- * @Description
+ * @Description 测试Service
  * @Author xiezy
- * @Date 2020/10/10 15:08
+ * @Date 2020/10/10 15:07
  * @Version V1.0
  **/
-public interface TestService {
-
-    List<TestPOJO> findList();
-
-    int addData(TestPOJO testPOJO);
-
-    int modifyData(TestPOJO testPOJO);
-
-    int deleteData(TestPOJO testPOJO);
+@Service("testService")
+public class TestService extends CrudService<TestDao, TestPOJO> {
 
 }
+

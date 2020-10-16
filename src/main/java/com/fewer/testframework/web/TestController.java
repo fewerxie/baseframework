@@ -1,5 +1,6 @@
 package com.fewer.testframework.web;
 
+import com.fewer.common.config.GlobalConfig;
 import com.fewer.testframework.domain.TestPOJO;
 import com.fewer.testframework.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import java.util.List;
 
 /**
  * @ClassName TestController
- * @Description
+ * @Description 测试控制层
  * @Author xiezy
  * @Date 2020/10/10 15:08
  * @Version V1.0
@@ -27,27 +28,27 @@ public class TestController {
     public String findList(Model model) {
         System.out.println("Controller查询所有");
         List<TestPOJO> testPOJOList = testService.findList();
+        System.out.println(GlobalConfig.getUserfilesBaseDir());
 //        model.addAttribute("testPOJOList", testPOJOList);
         return "testJsp";
     }
 
     @RequestMapping("/addData")
-    public String addData(TestPOJO testPOJO) {
+    public Boolean addData(TestPOJO testPOJO) {
         System.out.println("Controller新增数据");
-//        return testService.addData(testPOJO);
-        return "testJsp";
+        return testService.save(testPOJO);
     }
 
     @RequestMapping("/modifyData")
-    public int modifyData(TestPOJO testPOJO) {
+    public Boolean modifyData(TestPOJO testPOJO) {
         System.out.println("Controller修改数据");
-        return testService.modifyData(testPOJO);
+        return testService.save(testPOJO);
     }
 
     @RequestMapping("/deleteData")
-    public int deleteData(TestPOJO testPOJO) {
+    public Boolean deleteData(TestPOJO testPOJO) {
         System.out.println("Controller删除数据");
-        return testService.deleteData(testPOJO);
+        return testService.delete(testPOJO);
     }
 
 }
