@@ -46,6 +46,7 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
     public static String getDate(String pattern) {
         return formatDate(new Date(), pattern);
     }
+
     /**
      * 得到任意日期时间字符串，转换格式（yyyy-MM-dd HH:mm:ss）
      */
